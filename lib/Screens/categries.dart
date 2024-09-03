@@ -32,7 +32,7 @@ class CategriesTab extends StatelessWidget {
                     onClick(categories[index]);
                   },
                   child: CategoryItem(
-                      model: categories[index], isodd: index.isOdd));
+                      categoryModel: categories[index], isodd: index.isOdd));
             },
             itemCount: categories.length,
           ),

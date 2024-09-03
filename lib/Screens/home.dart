@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news_app/Models/category_model.dart';
 import 'package:news_app/apis/api_manger.dart';
 import 'categries.dart';
+import 'drawar.dart';
 import 'news_item.dart';
 import 'tab_bar.dart';
 import 'tab_item.dart';
@@ -27,11 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        drawer: InkWell(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Drawer()),
+        drawer: DrawarTab(),
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           shape: RoundedRectangleBorder(
