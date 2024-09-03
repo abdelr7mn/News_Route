@@ -28,7 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        drawer: DrawarTab(),
+        drawer: DrawarTab(
+          onClick: onDrawerClicked,
+        ),
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.white),
           shape: RoundedRectangleBorder(
@@ -47,19 +49,27 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           centerTitle: true,
         ),
-        body: SelectedCartegory == null
+        body: categoryModel == null
             ? CategriesTab(
                 onClick: onCategorySelected,
               )
-            : TabBarWidget(id: SelectedCartegory!.id),
+            : TabBarWidget(id: categoryModel!.id),
       ),
     );
   }
 
-  CategoryModel? SelectedCartegory = null;
+  CategoryModel? categoryModel;
+
+  onDrawerClicked(id) {
+    if (id == DrawarTab.CATEGORY_ID) {
+      categoryModel = null;
+      Navigator.pop(context);
+    } else if (id == DrawarTab.SETTINGS_ID) {}
+    setState(() {});
+  }
 
   onCategorySelected(cat) {
-    SelectedCartegory = cat;
+    categoryModel = cat;
     setState(() {});
   }
 }

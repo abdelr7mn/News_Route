@@ -20,11 +20,6 @@ class CategoryModel {
           image: "assets/images/bussines.png",
           color: Colors.orange),
       CategoryModel(
-          id: "sports",
-          name: "Sports",
-          image: "assets/images/sports.png",
-          color: Colors.red),
-      CategoryModel(
           id: "entertainment",
           name: "Entertainment",
           image: "assets/images/environment.png",
@@ -44,7 +39,11 @@ class CategoryModel {
           name: "Science",
           image: "assets/images/science.png",
           color: Colors.green),
-
+      CategoryModel(
+          id: "sports",
+          name: "Sports",
+          image: "assets/images/sports.png",
+          color: Colors.red),
     ];
   }
 }
